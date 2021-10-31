@@ -22,4 +22,3 @@ class Calculator:
     def multiply_numbers(value_a, value_b):
         """ multiply two numbers and storing result"""
         return value_a * value_b
-
