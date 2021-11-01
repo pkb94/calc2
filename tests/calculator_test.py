@@ -1,4 +1,5 @@
 """Testing the Calculator"""
+import unittest
 from calculator.calculator import Calculator
 
 
@@ -14,3 +15,16 @@ def test_calculator_subtract():
 def test_calculator_multiply():
     """Testing the multiply method of the calculator"""
     assert Calculator.multiply_numbers(2,3)== 6
+
+def test_calculator_divide():
+    """Testing the divide method of the calculator"""
+    assert Calculator.divide_numbers(4,2)== 2
+
+class MyTestCase(unittest.TestCase):
+    """A test case is the individual unit of testing.unittest provides a base class"""
+    def test_calculator_divide_by_zero(self):
+        """Testing the divide method of the calculator when dividing by zero"""
+        with self.assertRaises(ZeroDivisionError):
+            Calculator.divide_numbers(4,0)
+if __name__ == '__main__':
+    unittest.main()
