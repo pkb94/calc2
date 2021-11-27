@@ -5,7 +5,15 @@ from calculator.calculator import Calculator
 
 def test_calculator_add():
     """Testing the Add function of the calculator """
-    assert  Calculator.add_number(1,2)==3
+    """Arrange"""
+    value_a = 1
+    value_b = 2
+
+    """Act"""
+    addition = Calculator.add_number(value_a,value_b)
+
+    """Assert"""
+    assert  addition==3
 
 
 def test_calculator_subtract():
@@ -19,6 +27,9 @@ def test_calculator_multiply():
 def test_calculator_divide():
     """Testing the divide method of the calculator"""
     assert Calculator.divide_numbers(4,2)== 2
+
+
+
 
 class MyTestCase(unittest.TestCase):
     """A test case is the individual unit of testing.unittest provides a base class"""
