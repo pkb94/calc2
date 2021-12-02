@@ -1,6 +1,6 @@
 # Calculator Project Setup
 
-![](../../Desktop/Test.png)
+![](Test.png)
 To run tests, Lint, and Coverage report use this command:
 
 pytest  --pylint --cov
