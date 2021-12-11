@@ -1,55 +1,74 @@
 {% extends "base.html" %}
 {% block title %}Index{% endblock %}
 {% block head %}
-{{ super() }}
-<style type="text/css">
-    .container-fluid {
-        height: 80vh;
-    }
-</style>
+    {{ super() }}
+    <style>
+        #data {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+            border: 1px solid grey;
+            height: 50px;
+            width: 500px;
+            text-align: center;
+            margin-left: 34%;
+
+}
+
+#data td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#data tr:nth-child(even){background-color: #f2f2f2;}
+
+#data tr:hover {background-color: #ddd;}
+
+#data th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #04AA6D;
+  color: white;
+}
+    </style>
 {% endblock %}
 {% block content %}
-<div class="container-fluid">
-    <div class="row">
-        <div class="col">
-            <h1>Calculation Result</h1>
-            {% with messages = get_flashed_messages() %}
-            {% if messages %}
-            {% for message in messages %}
-            <div class="alert alert-success" role="alert">
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-info" role="alert" style="text-align: center ; margin-top: 70px ;  font-weight: bold;">
                 {{ message }}
-            </div>
-            {% endfor %}
-            {% endif %}
-            {% endwith %}
-
-            <div class="container">
-                <h4 class="text-center">Calculation Result</h4>
-                <!--    search button-->
-
-
-                <table class="table table-hover table-bordered table-light table-striped">
-                    <tr>
-                        <th>Value 1</th>
-                        <th>Value 2</th>
-                        <th>Operation</th>
-                        <th>Result</th>
-                    </tr>
-                    <tr>
-                        <td>{{ value1 }}</td>
-                        <td>{{ value2 }}</td>
-                        <td>{{ operation }}</td>
-                        <td colspan="2">{{ result }}</td>
-                    </tr>
-                </table>
 
             </div>
-            <!--            <strong>Value 1: </strong> {{ value1 }} <br>-->
-            <!--            <strong>Value 2: </strong> {{ value2 }} <br>-->
-            <!--            <strong>Operation: </strong> {{ operation }} <br>-->
-            <!--            <strong>Result: </strong> {{ result }}-->
-        </div>
-    </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<div style="text-align: center ; ">
+    <h1>Calculation Result</h1><br>
+     <table id="data" >
+
+      <tr>
+        <th>Value 1</th>
+        <th>Value 2</th>
+        <th>Operation</th>
+        <th>Result</th>
+      </tr>
+
+
+{#      {% for user in users %}#}
+        <tr>
+          <td>{{ value1 }}</td>
+          <td>{{ value2 }}</td>
+          <td>{{ operation }}</td>
+          <td>{{ result }}</td>
+        </tr>
+
+
+{#      {% endfor %}#}
+
+  </table>
+
 </div>
-
 {% endblock %}
