@@ -1,13 +1,10 @@
-# Calculator WebApp Project
+# Calculator Project Setup
+[![Build Status](https://app.travis-ci.com/kaw393939/calc2.svg?branch=main)](https://app.travis-ci.com/kaw393939/calc2)
 
-## Flash Message
+To run tests, Lint, and Coverage report use this command:
 
-![ScreenShot](https://raw.github.com/madhurima309/calc2/web_calc/localhost.PNG)
+pytest  --pylint --cov
 
-## Calculator App
-
-![ScreenShot](https://raw.github.com/madhurima309/calc2/web_calc/Calc.PNG)
-
-## Beautiful Tables
-
-![ScreenShot](https://raw.github.com/madhurima309/calc2/web_calc/result.PNG)
+.pylintrc is the config for pylint
+.coveragerc is the config for coverage
+setup.py is a config file for pytest
